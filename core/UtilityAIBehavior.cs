@@ -12,7 +12,7 @@ public partial class UtilityAIBehavior : Resource {
     }
 
     [Export]
-    public string Name;
+    public string? Name;
 
     [Export]
     public AggregationType Aggregation = AggregationType.PRODUCT;

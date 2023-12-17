@@ -4,16 +4,16 @@ using System;
 [GlobalClass]
 public partial class Agent : Node {
     [Export]
-    public Godot.Collections.Array<UtilityAIOption> Options;
+    public Godot.Collections.Array<UtilityAIOption>? Options;
 
     [Export]
     public Godot.Collections.Dictionary Context = new();
 
-    private Label _actionLabel;
+    private Label _actionLabel = null!;
 
     public override void _Ready() {
         _actionLabel = GetNode<Label>("CanvasLayer/HBoxContainer/Sliders/CurrentActionLabel");
-        foreach (var option in Options) {
+        foreach (var option in Options!) {
             option.Context = Context;
         }
         Context["nutrition"] = .5f;
@@ -23,7 +23,7 @@ public partial class Agent : Node {
 
     public override void _Process(double delta) {
         string bestAction = "idle";
-        var bestOption = UtilityAI.ChooseHighest(Options);
+        var bestOption = UtilityAI.ChooseHighest(Options!);
         if(bestOption != null) {
             bestAction = bestOption.Action.ActionName;
         }
