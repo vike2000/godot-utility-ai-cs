@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+//cspell:ignore mathf
+
 [Tool]
 [GlobalClass]
 public partial class UtilityAIResponseCurve : Curve {
