@@ -1,3 +1,5 @@
+#nullable enable
+
 using Godot;
 
 public static class UtilityAI {

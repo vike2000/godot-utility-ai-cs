@@ -1,4 +1,7 @@
 #if TOOLS
+
+#nullable enable
+
 using Godot;
 using System;
 
